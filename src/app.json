@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/travel/travel",
+        "pages/driver/register/register",
+        "pages/order/order",
+        "pages/test/test",
+        "pages/phone-number/phone-number",
+        "pages/article/article",
+        "pages/index/index",
+        "pages/travel-detail/travel-detail",
+        "pages/user/user",
+        "pages/activity/activity",
+        "pages/travel_detail_contract/travel_detail_contract",
+        "pages/text/text",
+        "shared/pages/msg/msg-fail",
+        "shared/pages/msg/msg-success"
+
+    ],
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/travel/travel",
+            "text": "自由行",
+            "iconPath": "assets/images/icon-home.png",
+            "selectedIconPath": "assets/images/icon-home-selected.png"
+
+        }, {
+            "pagePath": "pages/driver/register/register",
+            "text": "师傅招募",
+            "iconPath": "assets/images/icon-user.png",
+            "selectedIconPath": "assets/images/icon-user-selected.png"
+        }, {
+            "pagePath": "pages/order/order",
+            "text": "行程定制",
+            "iconPath": "assets/images/icon-activity.png",
+            "selectedIconPath": "assets/images/icon-activity-selected.png"
+        }]
+    },
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "途徒自由行",
+        "navigationBarTextStyle": "black"
+    }
+}

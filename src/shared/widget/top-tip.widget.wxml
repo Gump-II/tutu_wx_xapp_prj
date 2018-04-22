@@ -1,0 +1,5 @@
+<template name="topTip">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{data.showTopTips}}">
+         {{data.topTipsMsg}}
+    </view>
+</template>

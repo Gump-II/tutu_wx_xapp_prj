@@ -1,0 +1,8 @@
+﻿
+#忽略js文件，工程已经使用ts进行构建
+.DS_Store
+node_modules/
+dist/
+.idea/
+workspace.xml
+node_modules/

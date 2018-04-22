@@ -1,0 +1,51 @@
+<view class="container">
+    <!-- 头部，主要为公告板 -->
+    <!--<scroll-view class="container-scoll-view" scroll-y="true" scroll-x="false" scroll-top="2" lower-threshold="50" upper-threshold="1" bindscrolltoupper="refreshTravel" bindscrolltolower="loadMoreTravel">-->
+    <view class="container-header">
+        <swiper indicator-dots="true" autoplay="true" interval="2500" duration="500">
+            <block wx:for-items="{{travelData.callBoard}}" wx:key="{{item.id}}">
+                <swiper-item>
+                    <view class="call-board-img" style="background-image: url({{item.cover}});background-size:cover">
+                        <view style="font-size:25rpx;padding: 80px;text-align: center;color: #FFFFFF;">{{item.brief}}</view>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 主要内容 -->
+    <view class="container-main">
+        <block wx:for-items="{{travelData.journeys}}" wx:key="{{item.id}}">
+            <view id="{{item._id}}" class="container-main-item" bindtap="navToDetail">
+                <view class="container-main-item-imgbox">
+                    <image class="container-main-item-img" src="{{item.cover}}" />
+                    <text class="container-main-item-text">{{item.placard}}</text>
+                </view>
+                <view class="container-main-text">
+                    <view class="flex-row-set container-main-text-item">
+                        <view class="flex-column-set">
+                            <view class="font-special"><b>价格:</b></view>
+                            <view class="font-special"><b>已完成:</b></view>
+                        </view>
+                        <view class="flex-column-set">
+                            <view>{{item.cost}}元</view>
+                            <view>{{item.order}}次</view>
+                        </view>
+                        <view style="padding:30rpx;"></view>
+                        <view class="flex-column-set">
+                            <view class="font-special"><b>推荐指数:</b></view>
+                            <view class="font-special"><b>行程:</b></view>
+                        </view>
+                        <view class="flex-column-set">
+                            <view>{{item.recommend}}</view>
+                            <view>{{item.duration}}天</view>
+                        </view>
+                    </view>
+
+                </view>
+            </view>
+        </block>
+    </view>
+    <import src="../../shared/widget/load-more.widget.wxml" />
+    <template is="loadMore" data="{{data:loadMoreX}}" />
+    <!--</scroll-view>-->
+</view>

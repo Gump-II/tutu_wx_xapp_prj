@@ -1,0 +1,25 @@
+<!-- index.wxml -->
+<view class="container">
+    <view class="container-header">
+        <view class="tutufree-logo">
+            <image src="../../assets/images/tutufree_logo.png"></image>
+        </view>
+        <view class="tutufree">
+            <image src="../../assets/images/tutufree.png"></image>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="container-main">
+        <view class="cotainer-main-list">
+            <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+                <view id="{{index}}" class="container-main-list-item" bindtap="targetToggle">
+                    <view class="container-main-list-item-img" style="background-image: url({{item.imgUrl}})">
+                        <view class="container-main-list-item-label">
+                            <label>{{item.name}}</label>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

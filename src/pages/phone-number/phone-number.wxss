@@ -1,0 +1,60 @@
+/* pages/chat/chat.wxss */
+
+page {
+    /*background-color: #f8f8f8;*/
+    text-align: center;
+    width: 750rpx;
+    height: 95%;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+
+.container {
+    display: block;
+    height: 100%;
+    padding: 10rpx;
+    background-color: white;
+}
+
+.chat_window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding-top: 200px;
+    font-size: 30rpx;
+    padding: 40rpx;
+}
+
+.contact-all {
+    flex: 1;
+    display: block;
+}
+
+.contact-img-and-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.contact-img-box {
+    flex: 0;
+}
+
+.contact-text-box {
+    flex: 1;
+    text-align: center;
+    line-height: 300rpx;
+    font-size: 40rpx;
+}
+
+image {
+    width: 300rpx;
+    height: 300rpx;
+}
+
+.explain {
+    font-size: 25rpx;
+    margin-top: 100rpx;
+    color: #999;
+    text-align: center;
+}

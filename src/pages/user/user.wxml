@@ -1,0 +1,7 @@
+<view class="page container">
+    <image src="http://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM5aib3VfK1sKtUMT1I9ZyZiaVtTW7T5c3UhibuolWia6458d3WbwEg00hAGvgB9N03146iaKHN1IF3L9ibg/0"
+           model="aspectFill" class=" avatar"  />
+          <text>夏天</text>
+
+          
+</view>

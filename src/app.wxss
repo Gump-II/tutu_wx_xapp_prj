@@ -1,0 +1,8 @@
+/**app.wxss**/
+
+@import './lib/weiui/weiui.wxss';
+
+.weui-loadmore {
+    width: auto;
+}
+

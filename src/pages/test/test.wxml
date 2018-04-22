@@ -1,0 +1,50 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar" style="background:#603811">
+                <block wx:for-items="{{sliderTab.tabs}}" wx:key="{{index}}">
+                    <view id="{{index}}" class="weui-navbar__item {{sliderTab.activeIndex == index ? 'weui-bar__item_on' : ''}} " bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="width:{{sliderTab.sliderWidth}}px; transform: translateX({{sliderTab.sliderOffset}}px);-webkit-transform: translateX({{sliderTab.sliderOffset}}px);">
+                </view>
+            </view>
+            <view class="weui-tab__panel" style="text-align:center">
+                <swiper current="{{sliderTab.activeIndex}}" bindchange="tabChange" style="height:{{winHeight - 51}}px;">
+                    <swiper-item class="page">
+                        <import src="../../shared/widget/form.widget.wxml" />
+                        <template is="form" data="{{formData}}" />
+                        <!--客服信息-->
+                        <view class="question-text">
+                            <text>如果对本次行程预定有特殊要求</text>
+                            <text>可以直接拨打电话进行人工预定行程</text>
+                            <view data-phonenumber="<% COM_TEL %>" bindtap="callContact">
+                                <% COM_TEL_SHOW %>
+                            </view>
+                        </view>
+                        <!--表单提交按钮-->
+                        <view class="submit-dirct">
+                            <view class="btn-block-order">
+                                <button class="btn-block btn-orange" bindtap="submitOrder">订单提交</button>
+                            </view>
+                        </view>
+                    </swiper-item>
+                    <swiper-item>
+                        <view>2222222222</view>
+                    </swiper-item>
+                    <swiper-item>
+                        <view>333333333</view>
+                    </swiper-item>
+                    <swiper-item>
+                        <view>333333333</view>
+                    </swiper-item>
+                    <swiper-item>
+                        <view>333333333</view>
+                    </swiper-item>
+                </swiper>
+
+            </view>
+        </view>
+    </view>
+</view>

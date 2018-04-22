@@ -1,0 +1,48 @@
+<!--第一页-->
+<view style="width: 99%;">
+    <view hidden="{{currentPage != 1}}" class="page-flex-column-set">
+    <view style="flex:1">
+        <import src="../../../shared/widget/form.widget.wxml" />
+        <template is="form" data="{{formData:formData1,controlChanges:'controlChanges1',type:'text'}}" />
+        <view class="submit-dirct btn-box-bg btn-flex-row-set">
+            <button class="btn-color btn-block" data-pageIndex="2" bindtap="switchPageEvent">下一步</button>
+            <button class="btn-color btn-block" bindtap="quickRegister">快速注册</button>
+        </view>
+    </view>
+        <view class="question-text">
+            <text>注册司机师傅如有问题</text>
+            <text>可以直接点击[快速注册]按钮稍后客服回复</text>
+
+            <view bindtap="callContactEvent" data-phoneNumber="<% COM_TEL %>" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd" data-phoneNumber="<% COM_TEL %>" style="margin-left: 140rpx">
+                    <image data-phoneNumber="<% COM_TEL %>" src="../../../assets/images/service_phone.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view data-phoneNumber="<% COM_TEL %>">
+                    <% COM_TEL_SHOW %>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--第二页-->
+    <view hidden="{{currentPage != 2}}">
+        <import src="../../../shared/widget/form.widget.wxml" />
+        <template is="form" data="{{formData:formData2,controlChanges:'controlChanges2',type:'text'}}" />
+        <view class="submit-dirct btn-box-bg">
+
+            <button class="btn-block btn-color" data-pageIndex="1" bindtap="showPageEvent">上一步</button>
+            <button class="btn-block btn-color" data-pageIndex="3" bindtap="switchPageEvent">下一步</button>
+
+        </view>
+    </view>
+
+    <!--第三页-->
+    <view hidden="{{currentPage != 3}}">
+        <import src="../../../shared/widget/form.widget.wxml" />
+        <template is="form" data="{{formData:formData3,controlChanges:'controlChanges3',type:'image'}}" />
+        <view class="submit-dirct btn-box-bg">
+            <button class="btn-block btn-color" data-pageIndex="2" bindtap="showPageEvent">上一步</button>
+            <button class="btn-block btn-color" data-pageIndex="1" bindtap="completeRegisterEvent">完成注册</button>
+        </view>
+    </view>
+</view>

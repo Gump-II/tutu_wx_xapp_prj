@@ -1,0 +1,24 @@
+<!--行程预定部分-->
+<view class="container">
+    <!--表单内容-->
+    <block wx:if="{{pageShow}}">
+        <form bindsubmit="formSubmit" bindreset="formReset">
+            <import src="../../shared/widget/form.widget.wxml" />
+            <template is="form" data="{{formData:formData1,controlChanges:'controlChanges1',type:'text'}}" />
+            <!--客服信息-->
+            <view class="question-text">
+                <text>如果对本次行程预定有特殊要求</text>
+                <text>可以直接拨打电话进行人工预定行程</text>
+                <view data-phonenumber="<% COM_TEL %>" bindtap="callContact">
+                    <% COM_TEL_SHOW %>
+                </view>
+            </view>
+            <!--表单提交按钮-->
+            <view class="submit-dirct">
+                <view class="btn-block-order">
+                    <button class="btn-block btn-orange" bindtap="submitOrder">订单提交</button>
+                </view>
+            </view>
+        </form>
+    </block>
+</view>

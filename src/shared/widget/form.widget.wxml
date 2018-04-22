@@ -1,0 +1,89 @@
+<template name="form">
+    <view wx:if="{{type=='text'}}" class="group ">
+        <view class="group-body">
+            <view class="input-list" wx:if="{{formData}}">
+                <block wx:for="{{formData}}" wx:key="control.name" wx:for-item="control">
+                    <!--普通输入框-->
+                    <block wx:if="{{control.type == '<% FORM_INPUT %>'}}">
+                        <view class="input-item">
+                            <text class="input-item-label">{{control.title}}：</text>
+                            <view class="input-item-content">
+                                <input type="{{control.inputValueType?control.inputValueType:'text'}}" value="{{control.value}}" data-object="{{control}}" placeholder="{{control.placeholder}}" maxlength="{{control.maxlength ?control.maxlength:140 }}"
+                                    bindinput="{{controlChanges}}"></input>
+                            </view>
+                        </view>
+                    </block>
+                    <!--多行文本输入框-->
+                    <block wx:elif="{{control.type == '<% FORM_TEXTAREA %>'}}">
+                        <view class="group-body">
+                            <textarea data-object="{{control}}" value="{{control.value}}" class="remark" bindinput="{{controlChanges}}" placeholder="{{control.placeholder}}"
+                                maxlength="{{control.maxlength ?control.maxlength:140}}"></textarea>
+                        </view>
+                    </block>
+                    <!--日期选择器-->
+                    <block wx:elif="{{control.type == '<% FORM_OPTIONS_DATE %>'}}">
+                        <view class="input-item" style="text-align: center">
+                            <text class="input-item-label">{{control.title}}：</text>
+                            <picker mode="date" value="{{control.value}}" data-object="{{control}}" bindchange="{{controlChanges}}">
+                                <view class="picker-text">{{control.value}}</view>
+                            </picker>
+                        </view>
+                    </block>
+                    <!--普通选择器-->
+                    <block wx:elif="{{control.type == '<% FORM_OPTIONS_SLECTOR %>'}}">
+                        <view class="input-item">
+                            <text class="input-item-label">{{control.title}}：</text>
+                            <picker class="input-item-content" bindchange="{{controlChanges}}" value="{{control.value}}" data-object="{{control}}" range="{{control.options}}"
+                                mode="selector">
+                                {{control.value}}
+                            </picker>
+                        </view>
+                    </block>
+                    <!--带按钮的input框框-->
+                    <block wx:elif="{{control.type == '<% FORM_INPUT_BUTTON %>'}}">
+                        <view class="input-item-ver">
+                            <view style="flex-direction:row;display:flex;width:100%;">
+                                <view class="input-item-inline" style="flex-direction:row;display:flex;flex:1;width:100%;">
+                                    <text class="input-item-label">{{control.title}}：</text>
+                                    <view class="input-item-content">
+                                        <input type="{{control.inputValueType?control.inputValueType:'text'}}" value="{{control.value}}" data-object="{{control}}" placeholder="{{control.placeholder}}" maxlength="{{control.maxlength ?control.maxlength:140 }}"
+                                            bindinput="{{controlChanges}}"></input>
+                                    </view>
+                                </view>
+                                <view class="btn-ver">
+                                    <button class="btn-block-ver btn-color" data-object="{{control}}" bindtap="{{control.button.bindtapFuncName}}" style="width:100%"
+                                        disabled="{{control.button.disable}}">{{control.button.title}}</button>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <!--分割头部文字-->
+                    <block wx:elif="{{control.type == '<% FORM_SPLIT_TEXT %>'}}">
+                        <view class="group-header">{{control.title}}</view>
+                    </block>
+
+                </block>
+            </view>
+
+        </view>
+    </view>
+
+    <block wx:elif="{{type=='image'}}">
+        <view class="group" wx:if="{{formData}}">
+            <view class="group-body img-dirct" style="flex-wrap:wrap">
+                <block wx:for-items="{{formData}}" wx:key="control.name" wx:for-item="control">
+                    <view class="img-upload">
+                        <view class="group-header-img">{{control.title}}</view>
+                        <view data-object="{{control}}" wx:if="{{!control.imageUpload.isPreviewed}}" bindtap="{{control.imageUpload.bindtapInAddState}}">
+                            <view id="{{item.id}}" class="img-add"></view>
+                        </view>
+                        <view data-object="{{control}}" wx:else class="img-item" bindtap="{{control.imageUpload.bindtapInPreviewState}}">
+                            <image src="{{control.imageUpload.previewImagePath}}" mode="scaleToFill"></image>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+
+    </block>
+</template>

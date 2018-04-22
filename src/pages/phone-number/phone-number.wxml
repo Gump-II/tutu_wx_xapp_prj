@@ -1,0 +1,27 @@
+<view class="container">
+    <view class="chat_window" style="text-align: center">
+
+        <text>点击以下图标，微信联系客服</text>
+        <contact-button type="default-dark" size="270" session-from="weapp">
+        </contact-button>
+
+        <text style="margin-top:100rpx" data-phonenumber="<% COM_TEL %>" bindtap="callContact">点击以下图标，电话联系客服</text>
+        <view data-phonenumber="<% COM_TEL %>" bindtap="callContact">
+            <image style="width:27px;height: 27px" src="../../assets/images/service_phone.png"></image>
+        </view>
+        <view>
+            <image style="width:400rpx;height:80rpx; margin-top:180rpx" src="../../assets/images/tutufree.png"></image>
+        </view>
+        <view class="explain">
+            <text>
+      途徒自由行，让旅途更自由。想获得更多的旅游信息吗？想有一个更加美好的旅行吗？
+          </text>
+            <text>
+      那就请联系我们
+      </text>
+            <text>
+      立刻获取更加优质的服务！
+      </text>
+        </view>
+    </view>
+</view>

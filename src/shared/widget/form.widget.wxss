@@ -1,0 +1,263 @@
+.question-text {
+    padding: 20rpx;
+    text-align: center;
+}
+
+.question-text text {
+    display: block;
+    color: #888;
+    font-size: 28rpx;
+}
+
+.question-text view {
+    font-size: 48rpx;
+    color: #009999;
+}
+
+
+/**app.wxss**/
+
+page {
+    height: 100%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    font: normal 30rpx/1.68 -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.container-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container-gray {
+    background: #f9f9f9;
+}
+
+input {
+    height: 60rpx;
+    line-height: 60rpx;
+    font-family: inherit;
+}
+
+.input-list {
+    padding: 0 20rpx;
+    margin: 20rpx 0;
+    background: #fff;
+    border-top: 1rpx solid #ddd;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.input-list .input-item {
+    padding: 20rpx;
+    line-height: 2;
+    display: flex;
+    font-size: 30rpx;
+    border-top: 1rpx solid #e8e8e8;
+}
+
+.input-list .input-item-ver {
+    padding: 0rpx;
+    line-height: 2;
+    display: flex;
+    font-size: 30rpx;
+    border-top: 1rpx solid #e8e8e8;
+}
+
+.input-item-inline {
+    padding: 20rpx;
+}
+
+.input-list .input-item:first-child {
+    border-top: 0;
+}
+
+.input-item-label {
+    display: block;
+    /*width: 5em;*/
+    color: #666;
+}
+
+.input-item-content {
+    color: #333;
+    flex: 1;
+}
+
+.input-item.input-item-full {
+    display: block;
+}
+
+.input-item.input-item-full .input-item-label {
+    width: 100%;
+}
+
+.input-item.input-item-full .input-item-content {
+    width: 100%;
+}
+
+.input-item.input-item-full textarea {
+    padding: 0;
+    height: 60rpx;
+    padding: 10rpx;
+}
+
+.input-item.input-item-full .img-upload {
+    padding: 0;
+}
+
+.input-item.input-item-adaption .input-item-label {
+    width: auto;
+    margin-right: 20rpx;
+}
+
+button {
+    font-size: 32rpx;
+    line-height: 72rpx;
+}
+
+.btn-submit {
+    padding: 20rpx;
+}
+
+.btn-ver {
+    padding: 5rpx;
+}
+
+.btn-block-ver {
+    width: 35%;
+    line-height: 88rpx;
+}
+
+.btn-block-order {
+    width: 100%;
+    line-height: 88rpx;
+}
+
+.btn-orange {
+    background: #009999;
+    color: #fff;
+}
+
+.btn-gray {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.btn-color {
+    background: #009999;
+    color: #fff;
+}
+
+.btn-gray {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.group {
+    display: block;
+    width: 100%;
+    text-align: left !important;
+}
+
+.group-header {
+    color: #009999;
+    line-height: 70rpx;
+    display: flex;
+    padding: 0 20rpx;
+    background: #f9f9f9;
+}
+
+.group-header-img {
+    color: #009999;
+    line-height: 40rpx;
+    display: flex;
+    padding: 0 20rpx;
+    background: white;
+}
+
+.group-body {
+    background: #fff;
+    border-top: 1rpx solid #ddd;
+    border-bottom: 1rpx solid #ddd;
+}
+
+.group-body .input-list {
+    margin: 0;
+    border: none;
+}
+
+.img-dirct {
+    flex-direction: row;
+    display: flex;
+    padding: 20rpx
+}
+
+.btn-box-bg {
+    background-color: #f8f8f8;
+}
+
+.submit-dirct {
+    flex-direction: row;
+    display: flex;
+    padding: 20rpx
+}
+
+.img-upload {
+    padding: 20rpx;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.img-upload .img-item,
+.img-upload .img-add {
+    width: 290rpx;
+    height: 290rpx;
+    float: left;
+    margin: 10rpx;
+    border: 1rpx solid transparent;
+}
+
+.img-upload .img-add {
+    border: 1rpx dashed #ddd;
+    background: url(https://resource-1253377909.file.myqcloud.com/add.png) no-repeat 50% 50% / 70% auto;
+}
+
+.img-upload .img-item image {
+    width: 290rpx;
+    height: 290rpx;
+    float: left;
+    margin: 10rpx;
+    border: 1rpx solid transparent;
+}
+
+.img-upload .img-item {
+    position: relative;
+}
+
+.img-upload .img-item icon {
+    position: absolute;
+    right: -30rpx;
+    top: -10rpx;
+}
+
+.picker-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10rpx;
+    color: #000;
+}
+
+.remark {
+    height: 200rpx;
+    margin-top: 6rpx;
+    margin-left: 20rpx;
+}

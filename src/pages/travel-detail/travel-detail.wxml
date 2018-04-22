@@ -1,0 +1,81 @@
+<view class="container">
+    <!-- 行程详情头部，用于展示行程的相关图片 -->
+    <view class="container-header">
+        <swiper class="container-header-swiper" indicator-dots="true" autoplay="true" interval="2500" duration="500">
+            <block wx:for-items="{{travelDetail.atlas}}" wx:key="{{item.id}}">
+                <swiper-item>
+                  <view style="overflow:hide">
+                    <image style="width:100%" src="{{item}}"></image>
+                  </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 主要内容区域 -->
+    <view class="container-main">
+        <!-- 行程简介 -->
+        <view class="container-main-brief">
+            <view class="container-main-brief-content row-display">
+                <view class="container-main-brief-label row-display-wide">{{travelDetail.brief}}</view>
+                <view class="container-main-brief-price">￥{{travelDetail.cost}}</view>
+            </view>
+            <view class="container-main-brief-date row-display">
+                <view class="container-main-brief-date-hd row-display-wide">推荐日期</view>
+                <image class="container-main-brief-date-arrows" src="../../assets/images/arrows.png"></image>
+                <view class="container-main-brief-date-bd">
+                    <block wx:for-items="{{travelDetail.date}}" wx:key="{{item.id}}"><text>{{item}} </text></block>
+                </view>
+            </view>
+        </view>
+        <!-- 菜单生成部分 -->
+        <view class="container-menu-list">
+            <block wx:for-items="{{menuList}}" wx:key="menu-{{index}}">
+                <view class="menu-list-item-hd row-display {{item.open ? 'menu-list-item-hd-show' : ''}}" id="{{index}}" bindtap="menuBindTapDeal">
+                    <view class="menu-list-item-text row-display-wide">{{item.text}}</view>
+                    <image class="menu-list-item-image" id="{{index}}" src="{{item.briefLogo}}"></image>
+                </view>
+                <!-- 行程简介 -->
+                <view class="menu-list-item-bd {{item.open ? 'menu-list-item-bd-show' : ''}}">
+                    <block wx:if="{{index== 0}}">
+                        <block wx:for="{{travelDetail.routes}}" wx:for-item="site" wx:key="site._id">
+                            <view class="menu-list-item-one-bd-view row-display">
+                                <image src="../../assets/images/down_arrow.png" style="height:12rpx;width:12rpx;margin-left:30rpx;"></image>
+                                <view class="menu-list-one-item-text" style="color:seagreen;">第{{index + 1 }}天:</view>
+                                <view class="menu-list-one-item-text row-display-wide">{{travelDetail.routes[index]}}</view>
+                            </view>
+                        </block>
+                    </block>
+                    <!-- 费用详情 -->
+                    <block wx:elif="{{index==1 }}">
+                        <view class="meanu-list-two-item"><text>{{travelDetail.costDetail}}</text></view>
+                    </block>
+                    <!-- 风土人情 -->
+                    <block wx:elif="{{index==2 }}">
+                        <block wx:for="{{travelDetail.pages}}" wx:for-item="page" wx:key="*this" class="menu-list-item-bd-view">
+                            <view data-url="{{page.jsonParseData}}" class="weui-media-box weui-media-box_appmsg" bindtap="navToTravelArticle" hover-class="weui-cell_active" style="background-color: white">
+                                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                                    <image class="weui-media-box__thumb" src="{{page.icon}}" />
+                                </view>
+                                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                                    <view class="weui-media-box__title">{{page.title}}</view>
+                                    <view class="weui-media-box__desc">作者：{{page.author}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                    <!-- 合同详情 -->
+                    <block wx:elif="{{index==3 }}">
+                        <view class="meanu-list-three-item">{{travelDetail.contract}}</view>
+                    </block>
+                    <!-- 保险详情 -->
+                    <block wx:elif="{{index==4 }}">
+                        <view class="meanu-list-four-item">{{travelDetail.insurance}}</view>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <!-- 按键生成部分 -->
+        <button class="btn-color container-main-button" bindtap="navToService">报名参与行程</button>
+
+    </view>
+</view>

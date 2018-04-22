@@ -1,0 +1,29 @@
+{
+  "name": "tutu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@www.aiesst.com:/home/git/tutu_wx_xapp_prj.git"
+  },
+  "author": "aiesst",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-if": "^2.0.2",
+    "gulp-modify": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^3.1.3",
+    "gulp-uglify": "^2.0.0",
+    "read-package-json": "^2.0.4",
+    "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "rxjs": "^5.0.3"
+  }
+}

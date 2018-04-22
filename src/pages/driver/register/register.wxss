@@ -1,0 +1,20 @@
+@import "../../../shared/widget/form.widget.wxss";
+
+
+
+.btn-block{
+    width: 48%;
+    height: 100%;
+}
+.btn-flex-row-set{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width:95%;
+    height: 72rpx; 
+}
+.page-flex-column-set{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+}

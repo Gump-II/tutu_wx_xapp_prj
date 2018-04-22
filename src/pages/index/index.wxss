@@ -1,0 +1,75 @@
+/**index.wxss**/
+
+page {
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+.container {
+  padding: 20rpx;
+  display: block;
+}
+
+.container-header {
+  width: 100%;
+  max-height: 100rpx;
+  display: flex;
+  align-items: center;
+  margin: 10rpx;
+}
+
+.tutufree-logo {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.tutufree {
+  height: 50rpx;
+  width: 320rpx;
+  margin-left: 50rpx;
+}
+
+image{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: darkslategrey;
+}
+
+.container-main {
+  height: 100%;
+  width: 100%;
+  display:block;
+}
+
+.cotainer-main-list {
+  margin-top: 10rpx;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.container-main-list-item {
+  height: 350rpx;
+  margin-top: 5rpx;
+  background-color: #fff;
+}
+
+.container-main-list-item-img {
+  width: 100%;
+  height: 350rpx;
+  background-size: cover;
+}
+
+.container-main-list-item-label {
+  padding-top: 170rpx;
+  font-size: 70rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, "Microsoft YaHei", sans-serif;
+  text-align: center;
+  color: #fff;
+}

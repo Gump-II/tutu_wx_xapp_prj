@@ -1,0 +1,27 @@
+/**
+ *一些解析样式的修复
+ *
+ * @author:ychost<c.yang@tutufree.com>
+ * @date  :2017-2-15
+ * wxPares.wxss 22行 无法覆盖，所以直接屏蔽
+ *
+ */
+
+.wxParse{
+        /*默认字体*/
+    font-size:16.5px;
+    /*padding:10px;*/
+    font-family: initial;
+    margin:0 10px;
+
+    color: initial;
+}
+
+image{
+    width:100% !important;
+}
+
+.wxParse-img{
+    background: initial;
+}
+

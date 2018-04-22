@@ -1,0 +1,11 @@
+.weui-tab__content {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.on {
+    color: #da7c0c;
+    border-bottom: 5rpx solid #da7c0c;
+}
+
+@import "../../shared/widget/form.widget.wxss";
